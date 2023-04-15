@@ -1,6 +1,10 @@
 import styles from "./Navbar.module.css";
+import { useContext } from "react";
+import { AuthContext } from "../context/auth-context";
 
 const Navbar = () => {
+  const{name} = useContext(AuthContext)
+
 
   return (
     <header className="sticky-top">
@@ -46,7 +50,7 @@ const Navbar = () => {
                 O botão de logout deverá ser testado darkmode
                 se sim, btn-dark, se não, btn-light */}
                 <a className="nav-link" href="/login">
-                  Login
+                  Login - {name}
                 </a>
               </li>
               <li className={`nav-item`}>
